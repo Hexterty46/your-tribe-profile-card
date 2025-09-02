@@ -4,6 +4,7 @@
 
 html:has(.profile-card-example) {
   height: 100vh;
+  background: linear-gradient(0deg, rgb(231, 95, 62) 40%, #3640f5 100%);
 }
 
 body:has(.profile-card-example) {
@@ -104,7 +105,7 @@ button.profile-card-example-button svg:nth-of-type(2) {
   margin-bottom: 0;
   padding: 5rem 0 3rem;
   text-align: center;
-  background: rgb(255,255,255);
+
 
   dt {
     margin-top: .25rem;
@@ -174,3 +175,29 @@ body.is-expanded .profile-card-example-dl dd {
 body.is-expanded .profile-card-example-img {
   width: 15em;
 }
+
+.profile-card-example-dl dd:nth-of-type(1),
+.profile-card-example-dl dt:nth-of-type(1) {
+  background-color: rgb(250, 43, 7);
+  color: white;
+}
+
+.profile-card-example-dl dd:nth-of-type(2),
+.profile-card-example-dl dt:nth-of-type(2) {
+  background-color: rgb(64, 224, 208);
+  color: rgb(28, 32, 48);
+}
+
+.profile-card-example-dl dd:nth-of-type(3),
+.profile-card-example-dl dt:nth-of-type(3) {
+  background-color: rgb(255, 215, 0);
+  color: rgb(28, 32, 48);
+}
+.profile-card-example-dl dt,
+.profile-card-example-dl dd {
+  padding: 1rem;
+  border-radius: 8px;
+  color: rgb(28, 32, 48); /* donkere tekst voor contrast */
+  font-weight: bold;
+}
+
