@@ -19,17 +19,17 @@ body {
   animation: gradientMove 5s ease infinite;
 }
 
-.profile-card-example {
+.profile-card {
   width: 25em;
   height: 35em;
   perspective: 1000px;
 }
 
-html:has(.profile-card-example) {
+html:has(.profile-card) {
   perspective: 1000px;
 }
 
-body:has(.profile-card-example) {
+body:has(.profile-card) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ body:has(.profile-card-example) {
  color: #10214e;
 }
 
-article.profile-card-example {
+article.profile-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ article.profile-card-example {
   border: 2px solid darkblue;
 }
 
-header.profile-card-example-header {
+header.profile-card-header {
   position: relative;
   width: 100%;
   display: flex;
@@ -65,12 +65,12 @@ header.profile-card-example-header {
   margin-top: .25rem;
 }
 
-.profile-card-example-header h1 {
+.profile-card-header h1 {
   margin: .5rem 0 0;
   color: rgb(237, 240, 50);
 }
 
-button.profile-card-example-button {
+button.profile-card-button {
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -83,26 +83,26 @@ button.profile-card-example-button {
   transform: scale(.8);
   transition: .25s;
 }
-button.profile-card-example-button:focus {
+button.profile-card-button:focus {
   outline: none;
   background: #202592;
 }
-button.profile-card-example-button svg {
+button.profile-card-button svg {
   position: absolute;
   top: calc(1.25rem - 12px);
   left: calc(1.25rem - 12px);
   stroke: #4e54c8;
   transition-delay: .25s;
 }
-button.profile-card-example-button:focus svg {
+button.profile-card-button:focus svg {
   stroke: rgba(0,239,255,1);
 }
-button.profile-card-example-button svg:nth-of-type(2) {
+button.profile-card-button svg:nth-of-type(2) {
   opacity: 0;
   transition-delay: 0ms;
 }
 
-.profile-card-example-img {
+.profile-card-img {
   position: relative;
   top: 2rem;
   width: 10em;
@@ -114,7 +114,7 @@ button.profile-card-example-button svg:nth-of-type(2) {
   border-color: lightcoral;
 }
 
-.profile-card-example-dl {
+.profile-card-dl {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
@@ -158,11 +158,11 @@ button.profile-card-example-button svg:nth-of-type(2) {
 }
 
 
-.profile-card-example p {
+.profile-card p {
   margin: 0;
 }
 
-.profile-card-example > p {
+.profile-card > p {
   width: 100%;
   margin-top: 0;
   padding: 3rem 2rem;
@@ -175,48 +175,48 @@ body.is-expanded {
   font-size: 1.05em;
 }
 
-body.is-expanded .profile-card-example {
+body.is-expanded .profile-card {
   width: 30vw;
   max-width: 60vw;
 }
 
-body.is-expanded .profile-card-example-button svg:first-of-type {
+body.is-expanded .profile-card-button svg:first-of-type {
   opacity: 0;
   transition-delay: 0ms;
 }
 
-body.is-expanded .profile-card-example-button svg:nth-of-type(2) {
+body.is-expanded .profile-card-button svg:nth-of-type(2) {
   opacity: 1;
   transition-delay: .25s;
 }
 
-body.is-expanded .profile-card-example-dl dd {
+body.is-expanded .profile-card-dl dd {
   font-size: 1.75em;
 }
 
-body.is-expanded .profile-card-example-img {
+body.is-expanded .profile-card-img {
   width: 13em;
 }
 
-.profile-card-example-dl dd:nth-of-type(1),
-.profile-card-example-dl dt:nth-of-type(1) {
+.profile-card-dl dd:nth-of-type(1),
+.profile-card-dl dt:nth-of-type(1) {
   background-color: rgb(250, 43, 7);
   color: white;
 }
 
-.profile-card-example-dl dd:nth-of-type(2),
-.profile-card-example-dl dt:nth-of-type(2) {
+.profile-card-dl dd:nth-of-type(2),
+.profile-card-dl dt:nth-of-type(2) {
   background-color: rgb(64, 224, 208);
   color: rgb(28, 32, 48);
 }
 
-.profile-card-example-dl dd:nth-of-type(3),
-.profile-card-example-dl dt:nth-of-type(3) {
+.profile-card-dl dd:nth-of-type(3),
+.profile-card-dl dt:nth-of-type(3) {
   background-color: rgb(255, 215, 0);
   color: rgb(28, 32, 48);
 }
-.profile-card-example-dl dt,
-.profile-card-example-dl dd {
+.profile-card-dl dt,
+.profile-card-dl dd {
   padding: 1rem;
   border-radius: 8px;
   color: rgb(28, 32, 48);
@@ -231,7 +231,7 @@ body.is-expanded .profile-card-example-img {
   transform-style: preserve-3d;
 }
 
-.profile-card-example.is-flipped .card-inner {
+.profile-card.is-flipped .card-inner {
   transform: rotateY(180deg);
 }
 
@@ -262,7 +262,7 @@ body.is-expanded .profile-card-example-img {
   position: relative;
 }
 
-.card-front .profile-card-example-dl dt {
+.card-front .profile-card-dl dt {
   margin-top: .25rem;
   padding-top: .25rem;
   border-top: 1px solid rgba(0,0,0,0.3);
