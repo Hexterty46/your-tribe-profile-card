@@ -31,9 +31,7 @@ body:has(.profile-card) {
 }
 
 article.profile-card {
-  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   width: 50vw;
@@ -100,17 +98,13 @@ button.profile-card-button:hover{
 
 .profile-card-length {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
   justify-items: center;
   width: 100%;
   margin-top: -3rem;
   margin-bottom: 0;
   padding: 5.83rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .profile-card p {
@@ -165,7 +159,7 @@ body.is-expanded .profile-card-img {
 .card-front {
   background: linear-gradient(0deg, rgb(231, 95, 62) 40%, #3640f5 100%);
   overflow-y: auto;
-  overflow:-x hidden;
+  overflow-x: hidden;
   position: relative;
 }
 
