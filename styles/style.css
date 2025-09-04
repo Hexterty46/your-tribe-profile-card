@@ -2,30 +2,31 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* donkere gradient */
-  background: linear-gradient(-45deg, #1b1a1a, #161616, #2a2a58, #16213e);
-  background-size: 400% 400%;
-
-  /* animatie */
-  animation: gradientMove 5s ease infinite;
-}
-
 @keyframes gradientMove {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #1b1a1a, #161616, #2a2a58, #16213e);
+  background-size: 400% 400%;
+  animation: gradientMove 5s ease infinite;
+}
+
+.profile-card-example {
+  width: 25em;
+  height: 35em;
+  perspective: 1000px;
+}
 
 html:has(.profile-card-example) {
-  height: 100vh;
+  perspective: 1000px;
 }
 
 body:has(.profile-card-example) {
@@ -55,18 +56,18 @@ article.profile-card-example {
 }
 
 header.profile-card-example-header {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
+  gap: .5rem;
+  margin-top: .25rem;
+}
 
-  /* Je kunt selectors nesten! */
-  h1 {
-    margin: 2rem 0 1rem;
-    color: rgb(237, 240, 50);
-  }
-
+.profile-card-example-header h1 {
+  margin: .5rem 0 0;
+  color: rgb(237, 240, 50);
 }
 
 button.profile-card-example-button {
@@ -170,7 +171,6 @@ button.profile-card-example-button svg:nth-of-type(2) {
   background: rgba(255,255,255, 0.5);
 }
 
-/* Deze styles zijn van toepassing als je op de knop klikt */
 body.is-expanded {
   font-size: 1.05em;
 }
@@ -219,7 +219,52 @@ body.is-expanded .profile-card-example-img {
 .profile-card-example-dl dd {
   padding: 1rem;
   border-radius: 8px;
-  color: rgb(28, 32, 48); /* donkere tekst voor contrast */
+  color: rgb(28, 32, 48);
   font-weight: bold;
 }
 
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.profile-card-example.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+  padding: 1rem;
+  color: white;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(0deg, #16213e 40%, #0f3460 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background: linear-gradient(0deg, rgb(231, 95, 62) 40%, #3640f5 100%);
+  overflow-y: auto;
+  overflow:-x hidden;
+  position: relative;
+}
+
+.card-front .profile-card-example-dl dt {
+  margin-top: .25rem;
+  padding-top: .25rem;
+  border-top: 1px solid rgba(0,0,0,0.3);
+  font-weight: bold;
+}
