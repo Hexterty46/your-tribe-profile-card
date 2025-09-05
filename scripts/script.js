@@ -1,9 +1,11 @@
-/* Stap 1: Selecteer de knop */
-let expandButton = document.querySelector('.profile-card-example-button')
+const RotateButton = document.getElementById("RotateButton");
+const card = document.getElementById("card");
+const RotateBack = document.getElementById("RotateBack");
 
-/* Stap 2: Wacht tot iemand op die knop klikt */
-expandButton?.addEventListener('click', function() {
+RotateButton.addEventListener("click", () => {
+  card.classList.toggle("is-flipped");
+});
 
-  /* Stap 3: Verander een class zodra iemand op die knop klikt */
-  document.body.classList.toggle('is-expanded')
-})
+RotateBack.addEventListener("click", () => {
+  card.classList.toggle("is-flipped");
+});
